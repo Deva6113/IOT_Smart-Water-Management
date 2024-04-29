@@ -1,9 +1,4 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
-trigger:
+ trigger:
 - main
 
 pool:
@@ -17,9 +12,9 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+
 - task: DotNetCoreCLI@2
   inputs:
     command: 'restore'
-    projects: 'https://github.com/Deva6113/IOT_Smart-Water-Management.git'
-    restoreArguments: '..'
+    projects: '**/*.csproj'  # Adjust this to match your project path
     feedsToUse: 'select'
